@@ -1,0 +1,9 @@
+package yourpackage.yourmodule;
+
+export class Person
+  public name: String;
+  public age: Int;
+
+  public function new();
+  end
+end

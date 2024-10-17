@@ -1,0 +1,1 @@
+let p = new Person("John", 30);

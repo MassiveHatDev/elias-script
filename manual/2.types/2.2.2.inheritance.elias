@@ -1,0 +1,8 @@
+class Student extends Person
+  public grade: Int;
+
+  public def new(name: String, age: Int, grade: Int)
+    super(name, age);
+    this.grade = grade;
+  end
+end

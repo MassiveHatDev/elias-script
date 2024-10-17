@@ -1,0 +1,26 @@
+// Unary Operators
+
+// Bitwise NOT
+let a: Int = 5;
+let bitwiseNotA: Int = ~a;
+
+// Logical NOT
+let b: Bool = true;
+let logicalNotB: Bool = !b;
+
+// Negation
+let c: Int = 10;
+let negatedC: Int = -c;
+
+let d: Float = 3.14;
+let negatedD: Float = -d;
+
+// Increment (prefix and postfix)
+let e: Int = 7;
+++e;
+e++;
+
+// Decrement (prefix and postfix)
+let f: Float = 5.5;
+++f;
+f++;

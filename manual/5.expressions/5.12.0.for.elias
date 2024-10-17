@@ -1,0 +1,7 @@
+for i in 0...10
+  print(i);
+end
+
+for item in collection
+  print(item);
+end

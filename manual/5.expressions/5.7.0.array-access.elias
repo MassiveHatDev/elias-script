@@ -1,0 +1,2 @@
+let myArray: Array<Int> = [1, 2, 3, 4, 5];
+let myElement = myArray[2];

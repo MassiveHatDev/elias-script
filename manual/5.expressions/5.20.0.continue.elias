@@ -1,0 +1,7 @@
+while true
+  expr1
+  if condition
+    continue;
+  end
+  expr2
+end

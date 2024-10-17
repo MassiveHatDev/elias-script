@@ -1,0 +1,7 @@
+class Example<T = Int, U = Int>
+  public a: T;
+  public b: U;
+  
+  public function new()
+  end
+end

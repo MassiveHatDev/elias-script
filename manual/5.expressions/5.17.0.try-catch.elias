@@ -1,0 +1,5 @@
+try
+  throw new Error("Hello, world!");
+catch e: Error
+  print(e.message);
+end

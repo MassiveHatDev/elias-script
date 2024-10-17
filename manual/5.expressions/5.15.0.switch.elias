@@ -1,0 +1,8 @@
+switch expression
+  case value1:
+    print("Hello, value1!");
+  case value2:
+    print("Hello, value2!");
+  default:
+    print("Hello, default!");
+end

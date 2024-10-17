@@ -1,0 +1,2 @@
+let myInt: Int = 10;
+let myFloat: Float = cast myInt;

@@ -1,0 +1,2 @@
+let myVariable: Int = 10;
+final myFinalVariable: Int = 10;

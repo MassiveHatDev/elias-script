@@ -1,0 +1,3 @@
+extern class NativeRubyClass
+  public def myMethod(): Void
+end

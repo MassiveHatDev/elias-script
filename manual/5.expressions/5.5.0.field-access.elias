@@ -1,0 +1,6 @@
+class MyClass
+  public field?: String = "Hello, world!";
+end
+
+let myObject = new MyClass();
+let myField = myObject.field?.toUpperCase();

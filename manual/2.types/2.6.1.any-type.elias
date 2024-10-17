@@ -1,0 +1,2 @@
+let anyValue: Any = 10;
+anyValue = "Hello, world!";

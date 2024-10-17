@@ -1,0 +1,8 @@
+typedef Car
+  model: String;
+  year: Int;
+end
+
+class Garage<T: Car>
+  public cars: Array<T>;
+end

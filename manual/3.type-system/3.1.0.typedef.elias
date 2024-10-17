@@ -1,0 +1,6 @@
+typedef MyType = Int;
+
+typedef User
+  name: String;
+  age: Int;
+end

@@ -1,0 +1,5 @@
+class MyClass
+  public def myMethod(): Void
+    print("Hello, world!");
+  end
+end

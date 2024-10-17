@@ -1,0 +1,11 @@
+if condition
+  print("Hello, world!");
+end
+
+if condition
+  print("Hello, condition1!");
+elseif condition
+  print("Hello, condition2!");
+else
+  print("Hello, other!");
+end

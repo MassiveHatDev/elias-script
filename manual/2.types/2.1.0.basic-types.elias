@@ -1,0 +1,3 @@
+let a: Int = 10;
+let b: Float = 10.0;
+let c: Bool = true;

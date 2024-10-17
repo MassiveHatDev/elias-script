@@ -1,0 +1,26 @@
+enum Color
+  Red,
+  Green,
+  Blue;
+  RGB(r: Int, g: Int, b: Int);
+end
+
+class Main
+  static public def main(): Void
+    let c = getColor();
+    switch c
+      case Color.Red:
+        print("Red");
+      case Color.Green:
+        print("Green");
+      case Color.Blue:
+        print("Blue");
+      case Color.RGB(r, g, b):
+        print("RGB(${r}, ${g}, ${b})");
+    end
+  end
+
+  static def getColor(): Color
+    return Color.Red;
+  end
+end

@@ -1,0 +1,15 @@
+interface Shape
+  public def area(): Float;
+end
+
+class Circle implements Shape
+  public radius: Float;
+
+  public def new(radius: Float)
+    this.radius = radius;
+  end
+
+  public def area(): Float
+    return Math.PI * this.radius * this.radius;
+  end
+end

@@ -1,0 +1,5 @@
+let myObject: Object = {
+  name: "John",
+  age: 30,
+  isStudent: false
+};

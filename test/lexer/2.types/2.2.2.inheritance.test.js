@@ -1,0 +1,47 @@
+import { lex, getCode } from "../../util";
+
+test("2.2.2.inheritance", async () => {
+  const code = await getCode("./manual/2.types/2.2.2.inheritance.elias")
+  expect(lex(code)).toEqual([
+    { variant: 'KeywordToken', value: 'class' },
+    { variant: 'IdentToken', value: 'Student' },
+    { variant: 'KeywordToken', value: 'extends' },
+    { variant: 'IdentToken', value: 'Person' },
+    { variant: 'KeywordToken', value: 'public' },
+    { variant: 'IdentToken', value: 'grade' },
+    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'IdentToken', value: 'Int' },
+    { variant: 'DelimiterToken', value: ';' },
+    { variant: 'KeywordToken', value: 'public' },
+    { variant: 'KeywordToken', value: 'def' },
+    { variant: 'KeywordToken', value: 'new' },
+    { variant: 'DelimiterToken', value: '(' },
+    { variant: 'IdentToken', value: 'name' },
+    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'IdentToken', value: 'String' },
+    { variant: 'DelimiterToken', value: ',' },
+    { variant: 'IdentToken', value: 'age' },
+    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'IdentToken', value: 'Int' },
+    { variant: 'DelimiterToken', value: ',' },
+    { variant: 'IdentToken', value: 'grade' },
+    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'IdentToken', value: 'Int' },
+    { variant: 'DelimiterToken', value: ')' },
+    { variant: 'KeywordToken', value: 'super' },
+    { variant: 'DelimiterToken', value: '(' },
+    { variant: 'IdentToken', value: 'name' },
+    { variant: 'DelimiterToken', value: ',' },
+    { variant: 'IdentToken', value: 'age' },
+    { variant: 'DelimiterToken', value: ')' },
+    { variant: 'DelimiterToken', value: ';' },
+    { variant: 'KeywordToken', value: 'this' },
+    { variant: 'DelimiterToken', value: '.' },
+    { variant: 'IdentToken', value: 'grade' },
+    { variant: 'DelimiterToken', value: '=' },
+    { variant: 'IdentToken', value: 'grade' },
+    { variant: 'DelimiterToken', value: ';' },
+    { variant: 'KeywordToken', value: 'end' },
+    { variant: 'KeywordToken', value: 'end' }
+  ]);
+});

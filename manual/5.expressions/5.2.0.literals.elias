@@ -1,0 +1,27 @@
+// Int
+let myInt: Int = 42;
+
+// Float
+let myFloat: Float = 3.14;
+
+// Bool
+let myBool: Bool = true;
+
+// EReg (Regular Expression)
+let myReg: EReg = ~/^\d+$/;
+
+// String
+let myString: String = "Hello, Eliascript!";
+
+// Array<T>
+let myArray: Array<Int> = [1, 2, 3, 4, 5];
+
+// Map<T, U>
+let myMap: Map<String, Int> = new Map();
+myMap.set("one", 1);
+myMap.set("two", 2);
+
+// IntIterator
+for i in 0...10
+  print(i);
+end

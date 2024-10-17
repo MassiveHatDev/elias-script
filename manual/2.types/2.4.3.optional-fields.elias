@@ -1,0 +1,5 @@
+typedef User = {
+  age : Int,
+  name : String,
+  phoneNumber? : String
+}

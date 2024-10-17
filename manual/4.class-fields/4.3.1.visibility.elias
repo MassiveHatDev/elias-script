@@ -1,0 +1,4 @@
+class MyClass
+  public field: Int = 10;
+  private field: Int = 10;
+end

@@ -1,0 +1,4 @@
+typedef MyList<T>
+  head: T;
+  tail: MyList<T>;
+end

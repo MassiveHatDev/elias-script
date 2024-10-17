@@ -1,0 +1,5 @@
+class MyClass extends MyBaseClass
+  override public def myMethod(): Void
+    print("Hello, world from myMethod!");
+  end
+end

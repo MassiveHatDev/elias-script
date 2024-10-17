@@ -1,0 +1,7 @@
+class MyClass
+  public def myMethod(): Void
+    def myLocalFunction(): Void
+      print("Hello, world from myLocalFunction!");
+    end
+  end
+end
