@@ -8,10 +8,10 @@ test("4.3.5.final", async () => {
     { variant: "KeywordToken", value: "final" },
     { variant: "KeywordToken", value: "public" },
     { variant: "IdentToken", value: "field" },
-    { variant: "DelimiterToken", value: ":" },
+    { variant: "OperatorToken", value: ":" },
     { variant: "IdentToken", value: "Int" },
-    { variant: "DelimiterToken", value: "=" },
-    { variant: "IntToken", value: "42" },
+    { variant: "OperatorToken", value: "=" },
+    { variant: "LiteralToken", type: "Numeric", value: "42" },
     { variant: "DelimiterToken", value: ";" },
     { variant: "KeywordToken", value: "end" },
   ]);

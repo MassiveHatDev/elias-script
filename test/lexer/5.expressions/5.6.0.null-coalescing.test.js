@@ -7,12 +7,12 @@ test("5.6.0.null-coalescing", async () => {
   expect(lex(code)).toEqual([
     { variant: 'KeywordToken', value: 'let' },
     { variant: 'IdentToken', value: 'myField' },
-    { variant: 'DelimiterToken', value: '=' },
+    { variant: 'OperatorToken', value: '=' },
     { variant: 'IdentToken', value: 'myObject' },
-    { variant: 'DelimiterToken', value: '.' },
+    { variant: 'OperatorToken', value: '.' },
     { variant: 'IdentToken', value: 'field' },
     { variant: 'OperatorToken', value: '??' },
-    { variant: 'StringToken', value: 'Default value' },
+    { variant: 'LiteralToken', type: "String", value: 'Default value' },
     { variant: 'DelimiterToken', value: ';' }
   ]);
 });

@@ -7,10 +7,10 @@ test("4.1.0.variable", async () => {
     { variant: 'IdentToken', value: 'MyClass' },
     { variant: 'KeywordToken', value: 'private' },
     { variant: 'IdentToken', value: 'field' },
-    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'OperatorToken', value: ':' },
     { variant: 'IdentToken', value: 'Int' },
-    { variant: 'DelimiterToken', value: '=' },
-    { variant: 'IntToken', value: '10' },
+    { variant: 'OperatorToken', value: '=' },
+    { variant: 'LiteralToken', type: "Numeric", value: '10' },
     { variant: 'DelimiterToken', value: ';' },
     { variant: 'KeywordToken', value: 'end' }
   ]);

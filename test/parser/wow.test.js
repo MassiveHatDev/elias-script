@@ -1,4 +1,4 @@
-import { lex, getCode } from "../../util";
+import { lex, getCode } from "../util";
 
 test("5.1.0.blocks", async () => {
   const code = await getCode("./manual/5.expressions/5.1.0.blocks.elias");

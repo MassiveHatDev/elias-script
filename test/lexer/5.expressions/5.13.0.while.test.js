@@ -7,7 +7,7 @@ test("5.13.0.while", async () => {
     { variant: "IdentToken", value: "condition" },
     { variant: "KeywordToken", value: "print" },
     { variant: "DelimiterToken", value: "(" },
-    { variant: "StringToken", value: "Hello, world!" },
+    { variant: "LiteralToken", type: "String", value: "Hello, world!" },
     { variant: "DelimiterToken", value: ")" },
     { variant: "DelimiterToken", value: ";" },
     { variant: "KeywordToken", value: "end" },

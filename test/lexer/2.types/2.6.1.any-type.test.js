@@ -5,14 +5,14 @@ test("2.6.1.any-type", async () => {
   expect(lex(code)).toEqual([
     { variant: "KeywordToken", value: "let" },
     { variant: "IdentToken", value: "anyValue" },
-    { variant: "DelimiterToken", value: ":" },
+    { variant: "OperatorToken", value: ":" },
     { variant: "IdentToken", value: "Any" },
-    { variant: "DelimiterToken", value: "=" },
-    { variant: "IntToken", value: "10" },
+    { variant: "OperatorToken", value: "=" },
+    { variant: "LiteralToken", type: "Numeric", value: "10" },
     { variant: "DelimiterToken", value: ";" },
     { variant: "IdentToken", value: "anyValue" },
-    { variant: "DelimiterToken", value: "=" },
-    { variant: "StringToken", value: "Hello, world!" },
+    { variant: "OperatorToken", value: "=" },
+    { variant: "LiteralToken", type: "String", value: "Hello, world!" },
     { variant: "DelimiterToken", value: ";" },
   ]);
 });

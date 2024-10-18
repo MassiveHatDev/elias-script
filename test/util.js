@@ -12,7 +12,9 @@ export function shuffleArray(array) {
 
 export function lex(input) {
   return Lexer.lex(input)
-    .map((t) => t.type)
+    .map((t) => {
+      return t.type
+    })
     .filter((t) => t.variant !== "WhitespaceToken");
 }
 

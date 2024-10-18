@@ -5,13 +5,13 @@ test("2.2.1.class-constructor", async () => {
   expect(lex(code)).toEqual([
     { variant: 'KeywordToken', value: 'let' },
     { variant: 'IdentToken', value: 'p' },
-    { variant: 'DelimiterToken', value: '=' },
+    { variant: 'OperatorToken', value: '=' },
     { variant: 'KeywordToken', value: 'new' },
     { variant: 'IdentToken', value: 'Person' },
     { variant: 'DelimiterToken', value: '(' },
-    { variant: 'StringToken', value: 'John' },
+    { variant: 'LiteralToken', type: "String", value: 'John' },
     { variant: 'DelimiterToken', value: ',' },
-    { variant: 'IntToken', value: '30' },
+    { variant: 'LiteralToken', type: "Numeric", value: '30' },
     { variant: 'DelimiterToken', value: ')' },
     { variant: 'DelimiterToken', value: ';' }
   ]);

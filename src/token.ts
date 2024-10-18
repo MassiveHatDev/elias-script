@@ -50,37 +50,23 @@ export enum ReservedWord {
 }
 
 export enum Operator {
-  // Unary Operators
   BitwiseNot = "~",
   LogicalNot = "!",
-  Negation = "-",
   Increment = "++",
   Decrement = "--",
-
-  // Binary Operators
-  // Arithmetic operators
   Addition = "+",
   Subtraction = "-",
   Multiplication = "*",
   Division = "/",
   Modulus = "%",
-
-  // String concatenation operators
-  StringConcatenation = "+",
-  StringConcatenationAssignment = "+=",
-
-  // Bitwise operators
   LeftShift = "<<",
   RightShift = ">>",
+  UnsignedRightShift = ">>>",
   BitwiseAnd = "&",
   BitwiseOr = "|",
   BitwiseXor = "^",
-
-  // Logical operators
   LogicalAnd = "&&",
   LogicalOr = "||",
-
-  // Compound assignment operators
   ModulusAssignment = "%=",
   MultiplicationAssignment = "*=",
   DivisionAssignment = "/=",
@@ -88,38 +74,25 @@ export enum Operator {
   SubtractionAssignment = "-=",
   LeftShiftAssignment = "<<=",
   RightShiftAssignment = ">>=",
+  UnsignedRightShiftAssignment = ">>>=",
   BitwiseAndAssignment = "&=",
   BitwiseOrAssignment = "|=",
   BitwiseXorAssignment = "^=",
-
-  // Numeric comparison operators
   Equality = "==",
   Inequality = "!=",
   LessThan = "<",
   LessThanOrEqual = "<=",
   GreaterThan = ">",
   GreaterThanOrEqual = ">=",
-
-  // String comparison operators
-  StringEquality = "==",
-  StringInequality = "!=",
-  StringLessThan = "<",
-  StringLessThanOrEqual = "<=",
-  StringGreaterThan = ">",
-  StringGreaterThanOrEqual = ">=",
-
-  // Equality operators
-  GeneralEquality = "==",
-  GeneralInequality = "!=",
-
-  // Miscellaneous operators
   Range = "...",
   Lambda = "->",
   Coalescer = "??",
-
-  // Ternary operator
-  // Conditional = "?:",
+  Equals = "=",
+  Dot = ".",
+  QuestionMark = "?",
+  Colon = ":",
 }
+export type OperatorValue = typeof Operator[keyof typeof Operator];
 
 export enum Delimiter {
   LeftBracket = "[",
@@ -130,11 +103,6 @@ export enum Delimiter {
   RightBrace = "}",
   Comma = ",",
   Semicolon = ";",
-  Colon = ":",
-  QuestionMark = "?",
-  Hash = "#",
-  Dot = ".",
-  Equals = "=",
 }
 
 export interface OperatorToken {
@@ -161,30 +129,24 @@ export interface KeywordToken {
   value: ReservedWord;
 }
 
-export interface StringToken {
-  variant: "StringToken";
+export interface LiteralToken {
+  variant: "LiteralToken";
+  type: "Numeric" | "String" | "Boolean"
   value: string;
 }
 
-export interface IntToken {
-  variant: "IntToken";
-  value: string;
-}
 
-export interface FloatToken {
-  variant: "FloatToken";
-  value: string;
-}
+
+// Punctuators
+// Comments
 
 export type TokenType =
-  | DelimiterToken
-  | OperatorToken
-  | IdentToken
-  | WhitespaceToken
-  | KeywordToken
-  | StringToken
-  | IntToken
-  | FloatToken;
+  | DelimiterToken // Delimiters
+  | OperatorToken // Operators
+  | IdentToken // Identifiers
+  | WhitespaceToken // Whitespace
+  | KeywordToken // Keywords
+  | LiteralToken; // Literals
 
 export type TokenTypeVariant = TokenType extends { variant: infer V }
   ? V

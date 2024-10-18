@@ -62,4 +62,8 @@ export class LexerScanner {
   public peekTriple(): string {
     return this.content.charAt(this.curIndex + 2);
   }
+
+  public peekQuad(): string {
+    return this.content.charAt(this.curIndex + 4);
+  }
 }

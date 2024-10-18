@@ -5,14 +5,14 @@ test("2.4.2.struct-type-notation", async () => {
   expect(lex(code)).toEqual([
     { variant: 'KeywordToken', value: 'typedef' },
     { variant: 'IdentToken', value: 'Point' },
-    { variant: 'DelimiterToken', value: '=' },
+    { variant: 'OperatorToken', value: '=' },
     { variant: 'DelimiterToken', value: '{' },
     { variant: 'IdentToken', value: 'x' },
-    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'OperatorToken', value: ':' },
     { variant: 'IdentToken', value: 'Int' },
     { variant: 'DelimiterToken', value: ';' },
     { variant: 'IdentToken', value: 'y' },
-    { variant: 'DelimiterToken', value: ':' },
+    { variant: 'OperatorToken', value: ':' },
     { variant: 'IdentToken', value: 'Int' },
     { variant: 'DelimiterToken', value: ';' },
     { variant: 'DelimiterToken', value: '}' }

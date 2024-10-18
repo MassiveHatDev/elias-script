@@ -5,9 +5,9 @@ test("3.3.1.import", async () => {
   expect(lex(code)).toEqual([
     { variant: "KeywordToken", value: "import" },
     { variant: "IdentToken", value: "yourpackage" },
-    { variant: "DelimiterToken", value: "." },
+    { variant: "OperatorToken", value: "." },
     { variant: "IdentToken", value: "yourmodule" },
-    { variant: "DelimiterToken", value: "." },
+    { variant: "OperatorToken", value: "." },
     { variant: "IdentToken", value: "Person" },
     { variant: "DelimiterToken", value: ";" },
     { variant: "KeywordToken", value: "class" },

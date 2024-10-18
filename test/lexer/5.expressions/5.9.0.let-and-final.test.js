@@ -7,17 +7,17 @@ test("5.9.0.let-and-final", async () => {
   expect(lex(code)).toEqual([
     { variant: "KeywordToken", value: "let" },
     { variant: "IdentToken", value: "myVariable" },
-    { variant: "DelimiterToken", value: ":" },
+    { variant: "OperatorToken", value: ":" },
     { variant: "IdentToken", value: "Int" },
-    { variant: "DelimiterToken", value: "=" },
-    { variant: "IntToken", value: "10" },
+    { variant: "OperatorToken", value: "=" },
+    { variant: "LiteralToken", type: "Numeric", value: "10" },
     { variant: "DelimiterToken", value: ";" },
     { variant: "KeywordToken", value: "final" },
     { variant: "IdentToken", value: "myFinalVariable" },
-    { variant: "DelimiterToken", value: ":" },
+    { variant: "OperatorToken", value: ":" },
     { variant: "IdentToken", value: "Int" },
-    { variant: "DelimiterToken", value: "=" },
-    { variant: "IntToken", value: "10" },
+    { variant: "OperatorToken", value: "=" },
+    { variant: "LiteralToken", type: "Numeric", value: "10" },
     { variant: "DelimiterToken", value: ";" },
   ]);
 });

@@ -5,7 +5,7 @@ test("5.11.0.new", async () => {
   expect(lex(code)).toEqual([
     { variant: "KeywordToken", value: "let" },
     { variant: "IdentToken", value: "myObject" },
-    { variant: "DelimiterToken", value: "=" },
+    { variant: "OperatorToken", value: "=" },
     { variant: "KeywordToken", value: "new" },
     { variant: "IdentToken", value: "MyClass" },
     { variant: "DelimiterToken", value: "(" },

@@ -11,7 +11,7 @@ test("4.3.4.extern", async () => {
     { variant: "IdentToken", value: "myMethod" },
     { variant: "DelimiterToken", value: "(" },
     { variant: "DelimiterToken", value: ")" },
-    { variant: "DelimiterToken", value: ":" },
+    { variant: "OperatorToken", value: ":" },
     { variant: "IdentToken", value: "Void" },
     { variant: "KeywordToken", value: "end" },
   ]);

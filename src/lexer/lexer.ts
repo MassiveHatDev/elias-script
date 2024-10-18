@@ -5,6 +5,8 @@ import {
   TokenTypeVariant,
   ReservedWord,
   Delimiter,
+  LiteralToken,
+  TokenType,
 } from "../token";
 import { LexerScanner } from "./lexer-scanner";
 
@@ -151,7 +153,11 @@ export class Lexer {
    */
   private static createTokenHelper(
     scanner: LexerScanner,
-    fn: (scanner: LexerScanner) => { variant: TokenTypeVariant; value?: string }
+    fn: (scanner: LexerScanner) => {
+      variant: TokenTypeVariant;
+      type?: string;
+      value?: string;
+    }
   ): Token {
     const minLine = scanner.curLine;
     const min = scanner.charIndex;
@@ -159,22 +165,14 @@ export class Lexer {
     const maxLine = scanner.curLine;
     const max = scanner.charIndex;
     const position = new Position(minLine, min, maxLine, max);
+    const tokenType = { variant: data.variant } as any;
     if (data.value) {
-      return new Token(
-        {
-          variant: data.variant as any,
-          value: data.value,
-        },
-        position
-      );
-    } else {
-      return new Token(
-        {
-          variant: data.variant as any,
-        },
-        position
-      );
+      tokenType.value = data.value;
     }
+    if (data.type) {
+      tokenType.type = data.type;
+    }
+    return new Token(tokenType, position);
   }
 
   /**
@@ -246,13 +244,15 @@ export class Lexer {
         if (type === "int") {
           return {
             value: number,
-            variant: "IntToken",
-          };
+            type: "Numeric",
+            variant: "LiteralToken",
+          } as LiteralToken;
         } else if (type === "float") {
           return {
             value: number,
-            variant: "FloatToken",
-          };
+            type: "Numeric",
+            variant: "LiteralToken",
+          } as LiteralToken;
         } else {
           throw new Error("Invalid number");
         }
@@ -330,8 +330,9 @@ export class Lexer {
       }
       return {
         value,
-        variant: "StringToken",
-      };
+        type: "String",
+        variant: "LiteralToken",
+      } as LiteralToken;
     });
   }
 
@@ -344,7 +345,12 @@ export class Lexer {
   private static createToken(scanner: LexerScanner): Token {
     const operators = Object.values(Operator);
     const peek = scanner.peek();
-    const peeked = [scanner.peek(), scanner.peekDouble(), scanner.peekTriple()]
+    const peeked = [
+      scanner.peek(),
+      scanner.peekDouble(),
+      scanner.peekTriple(),
+      scanner.peekQuad(),
+    ]
       .filter((char) => char)
       .join("")
       .split(" ")[0];

@@ -7,7 +7,7 @@ test("5.16.0.throw", async () => {
     { variant: "KeywordToken", value: "new" },
     { variant: "IdentToken", value: "Error" },
     { variant: "DelimiterToken", value: "(" },
-    { variant: "StringToken", value: "Hello, world!" },
+    { variant: "LiteralToken", type: "String", value: "Hello, world!" },
     { variant: "DelimiterToken", value: ")" },
     { variant: "DelimiterToken", value: ";" },
   ]);
