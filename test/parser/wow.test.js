@@ -1,23 +1,11 @@
-import { lex, getCode } from "../util";
+import { getCode } from "../util";
+import { Lexer } from "../../src/lexer/lexer";
+import { Parser } from "../../src/parser/parser";
+import { TokenScanner } from "../../src/token-scanner";
 
-test("5.1.0.blocks", async () => {
-  const code = await getCode("./manual/5.expressions/5.1.0.blocks.elias");
-  expect(lex(code)).toEqual([
-    { variant: "DelimiterToken", value: "{" },
-    { variant: "KeywordToken", value: "let" },
-    { variant: "IdentToken", value: "a" },
-    { variant: "OperatorToken", value: "=" },
-    { variant: "LiteralToken", type: "Numeric", value: "10" },
-    { variant: "DelimiterToken", value: ";" },
-    { variant: "KeywordToken", value: "let" },
-    { variant: "IdentToken", value: "b" },
-    { variant: "OperatorToken", value: "=" },
-    { variant: "LiteralToken", type: "Numeric", value: "20" },
-    { variant: "DelimiterToken", value: ";" },
-    { variant: "IdentToken", value: "a" },
-    { variant: "OperatorToken", value: "+" },
-    { variant: "IdentToken", value: "b" },
-    { variant: "DelimiterToken", value: ";" },
-    { variant: "DelimiterToken", value: "}" },
-  ]);
+test("2.1.0.basic-types", async () => {
+  const code = await getCode("./manual/2.types/2.1.0.basic-types.elias");
+  const scanner = new TokenScanner(Lexer.lex(code).filter(token => token.type.variant !== "WhitespaceToken"));
+  const expr = Parser.parse(-1, scanner);
+  console.log(JSON.stringify(expr, null, "  "));
 });

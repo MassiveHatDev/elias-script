@@ -46,7 +46,7 @@ export enum ReservedWord {
   Typedef = "typedef",
   Untyped = "untyped",
   Using = "using",
-  While = "while"
+  While = "while",
 }
 
 export enum Operator {
@@ -92,7 +92,7 @@ export enum Operator {
   QuestionMark = "?",
   Colon = ":",
 }
-export type OperatorValue = typeof Operator[keyof typeof Operator];
+export type OperatorValue = (typeof Operator)[keyof typeof Operator];
 
 export enum Delimiter {
   LeftBracket = "[",
@@ -131,11 +131,9 @@ export interface KeywordToken {
 
 export interface LiteralToken {
   variant: "LiteralToken";
-  type: "Numeric" | "String" | "Boolean"
+  type: "Numeric" | "String" | "Boolean";
   value: string;
 }
-
-
 
 // Punctuators
 // Comments

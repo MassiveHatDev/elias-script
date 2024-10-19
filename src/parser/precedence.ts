@@ -38,7 +38,7 @@ function hasOperator(token: OperatorToken, ops: OperatorValue[]): boolean {
   return false;
 }
 
-export default class Precedence {
+export class Precedence {
   public static get(scanner: TokenScanner, prefix: boolean): number {
     const token = scanner.peek();
     const operator = token.type;

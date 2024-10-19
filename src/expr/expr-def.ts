@@ -470,7 +470,16 @@ export type TypeParamTPExpr = {
 export type TypeParam = TypeParamTPType | TypeParamTPExpr;
 
 /**
- * Type path.
+ * TypePath represents the full path to a type within a type system, including the package, name, parameters, and possible subtypes.
+ *
+ * - `pack: string[]`: An array of strings representing the package or module path where 
+ *    the type is located. Each string represents a level in the package hierarchy.
+ * - `name: string`: The name of the type itself, which is being referenced or defined 
+ *    within the path.
+ * - `params?: TypeParam[]`: (Optional) An array of `TypeParam` representing the type 
+ *    parameters or generics associated with this type. This can be omitted if there are no type parameters.
+ * - `sub?: string`: (Optional) A string representing a subtype or a specific property 
+ *    of the type, if applicable. This is useful when referencing a nested or specific part of a larger type.
  */
 export type TypePath = {
   pack: string[];
@@ -545,9 +554,9 @@ export function EUnopConstructor(
 }
 
 /**
- * Variable.
+ * Let.
  */
-export type Var = {
+export type Let = {
   type?: ComplexType;
   namePos?: Position;
   name: string;
@@ -557,22 +566,22 @@ export type Var = {
 };
 
 /**
- * Variables expression.
+ * Let expression.
  */
-export type EVars = {
-  variant: "EVars";
-  vars: Var[];
+export type ELet = {
+  variant: "ELet";
+  let_: Let;
 };
 
 /**
- * Create a variables expression.
- * @param vars - The variables.
- * @returns The variables expression.
+ * Create a let expression.
+ * @param let_ - The let.
+ * @returns The let expression.
  */
-export function EVarsConstructor(vars: Var[]): EVars {
+export function EVarsConstructor(let_: Let): ELet {
   return {
-    variant: "EVars",
-    vars,
+    variant: "ELet",
+    let_,
   };
 }
 
@@ -960,7 +969,7 @@ export type ExprDef =
   | ECall
   | ENew
   | EUnop
-  | EVars
+  | ELet
   | EFunction
   | EBlock
   | EFor
